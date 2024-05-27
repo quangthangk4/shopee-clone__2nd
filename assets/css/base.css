@@ -1,0 +1,156 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --color-primary: #ee4b2b;
+    --header-height: 120px;
+    --navbar-height: 34px;
+}
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+/* responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+
+/* animation */
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear .1s;
+}
+
+@keyframes growth {
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    z-index: 33;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal__body{
+    position: relative;
+    z-index: 999;
+    margin: auto;
+    border-radius: 5px;
+    --growth-from: 0.7;
+    --gorwth-to: 1; 
+    animation: growth linear 0.1s
+}
+
+/* button */
+.btn {
+    min-width: 140px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-normal:hover {
+    background-color: rgba(0,0,0,0.08);
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--color-primary);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+}
+
+.btn-size-s {
+    height: 32px;
+    font-size: 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* seclection */
+
+.select-input {
+    height: 36px;
+    min-width: 200px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
